@@ -1,0 +1,172 @@
+//------------------------------------------------------------------------------------------------------------------------
+//Chapter 2
+//------------------------------------------------------------------------------------------------------------------------
+public class StudyNotes         //the class header for a public class named StudyNotes
+                                //pulbic class must be same name as .java file
+{
+   public static void main(String[] args)               //method header named main
+                                                        //every program in a method named main
+   {
+      System.out.println("This is a String literal");   //a group of characers inside a quotation is 
+                                                        //called a string literal, quotes around string literals, ya'll!
+                                                        //statements end with semicolon 
+      System.out.println("The anatony of this line");   //System is a class of API that contains objects and methods
+                                                        //out is an object which also has methods
+                                                        //out's methods include print and println
+                                                        //stuff insdie parenthese is the argument 
+      System.out.println("advances cursor to nextline");//Println advances cursor to next line
+      System.out.print("Doesn't advance cursor");       //Print displays message displayed in continuous stream 
+      System.out.print("\nusing escape sequence");      //"\n" is an escape sequence which starts with a blackslash
+                                                        //blackslash is followed by a control character
+                                                        //others include \t tab, \r return, \\ blackslash, \", \'
+      int value;                                        //this is a variable declartion, must be declared before use
+                                                        //first word is type of data variable will hold
+                                                        //second word is name of variable
+                                                        //ends with semicolon 
+      int number = 5;                                   //= is the assignment statement, an operator
+                                                        //value on right is stored into variable name on left
+                                                        //This is an example of intialization, where value on right is 
+                                                        //puts in variable to left of = orperator in declartion statement
+      int filghtNum = 89, traveTime, departure = 10;    //An example of how to declare variable and initialize some of them 
+      System.out.println(number);                       //sends name of variable to println             
+                                                        //no quotations around variable if you want its contents
+      System.out.println("This is" + "one string");     //Using + operator to concatenate two strings
+      System.out.println("I'm" + number);               //Using + to concatenate variable to string
+      System.out.println("Using + operator to" +        //can be done with argument is too long for one line
+                         "break up argument over" +
+                         "multiple lines");
+
+      int selfDocumenting;                              //be as self-documenting as possible when naming shit
+                                                        //practice good readability 
+                                                        //FOR VARIABLES first character should be lower case letter
+                                                        //can inclue a-z, A-Z, 0-9, _,$ (but $ is confusing), no spaces
+                                                        //helps distingush from class names, which start with capital 
+
+      //these are types of primative data that hold numberic data 
+      //the following are formatted as: DataType VariableName;
+      byte inches;                                      //1 byte
+      short month;                                      //2 bytes
+      int speed;                                        //4 bytes
+      long years;                                       //8 bytes
+      float seconds;                                    //4 bytes, floating point number, single precision
+      double cost;                                      //8 bytes, floating point number, double precision 
+      int lenth, width, area;                           //shorthand for combining variable declarations
+      //Integers are whole numbers
+      //Java assumes integer literals to be of the int data type, unless you force it to be treated otherwise 
+      //force integer literal to not be an into but suffixing "L" for long, for example
+
+      float point;
+      point = 23.5F;
+      //Java assumes a double data type when working with floating point literals 
+      //To assign a floating point literal to a float variable, you must force the double to be treated as float
+
+      //scientific notation can be used with E notation, where 4.7x10^4 = 4.7E4
+
+      boolean bool;                                     //boolean data type can hold data that is either true of flase 
+      bool = true;                                      //example that declares and assigns a boolean variable
+      System.out.print(bool);                           //returns: "true" to screen
+
+      char letter;                                      //example of char data type, which stores one character at at time
+      letter = 'A';                                     //encloused in SINGLE QUOTES
+      System.out.println(letter);                       //returns: "A" to screen 
+                                                        //2 byte memory
+                                                        //chars are stored in memory as unicode 
+      //unicode 
+      //a set of numbers that are used as codes to rep characters, 2 byte memory each
+
+      int x = 5;                                        //Showing how variables only hold one number at a time
+      System.out.print(x);                              //when a new value is assigned, it takes the place of 
+      x = 6;                                            //previous content 
+      System.out.print(x);
+
+      //Arithmetic operators 
+      //+, -, *, /, % (modulous, which shows the remainder) 
+      //precedence from highest to lowest: -(negation THEN * / % THEN + -
+      double division;                                  //when both numbers are integer, this will perform integer division 
+      division = 5/2;                                   //The remainder will be discarded AKA truncated, even as double
+      double divisionRemainder;                         //To return a floating point value, one value must have point
+      divisionRemainder = 5.0/2;
+
+      double regularWage;                               //an example of operator use in payroll example 
+      double basePay= 25;
+      double regularHours = 40;
+      double overtimeWages;
+      double overtimePay = 37.5;
+      double overtimeHours = 10;
+      double totalWages;
+
+      regularWage = basePay * regularHours;
+      overtimeWage = overtimePay * overtimeHours;
+      totalWage = regularWage + overtimeWage;
+      System.out.println("Wages for this week are $" + totalWage);
+
+      //Math class (pg 62) 
+      //can use math.pow to raise to power and math.sqrt to square
+      //Math.pi = 3.14159....
+
+      //combined assignment operators 
+      //+=, -=, *=, /=, %=
+      //for example, x+=5 is the same as x = x + 5
+
+      //Comversion between primative datat types
+      int x;                                            //This wil work no problem because a short can be stored in an int
+      short y = 2;                                      //because ints are larger than shorts 
+      x = y;                                            //called a widen conversion
+
+      //cast operators
+      //let you do a narrowing conversion where you trucate part of value on purpose
+      x = (int)number;                                  //the value in number will be converted to an int
+
+      //the final key 
+      //used to make variable a named constant
+      final double INTEREST_RATE;                       //the word final is written before data type
+                                                        //MUST INCLUDE intitalization value when using final modifier
+                                                        //all caps variable name distinguish contants 
+
+      //The String class
+      //holds the memory  address of data intom it is associated with 
+      //General form of method: referenceVariable.method(arguments...);
+      char letter;                                      //This index argument will show the character position in string
+      String name = "Hernman";                          // it will return m, because that is in the 3rd position
+      letter = name.CharAt(3);                          //note: the first character is in position 0
+
+      int stringSize                                    //This method returns the number of letters in string
+      String name = "Herman";                           //it will return 6, which is held is stringSize variable
+      stringSize = name.lenth();
+
+      String bigName = "HERMAN";                        //When this executes, littleName will hold the string "herman"
+      String littleName = bigName.toLowerCase;
+
+      //Reading keyboard input
+      //Use the System.in oubject to read keystrokes 
+      //NEED TWO THINGS HERE
+        //1) create scanner object to read input 
+        //Scanner keyboard = new Scanner(system.in);
+
+        //2) To find Scanner class: 
+        //import java.util.Scanner; 
+        //put in beginning of file, tells compiler where to find Scanner class
+      import java.util.Scanner;                         // needed for Scanner class 
+      String name;
+      int hours;
+      String month;
+      String input;
+      Char answer;
+
+      Scanner keyboard = new keyboard(system.in);       //creates scanner object to read input 
+
+      System.out.println("What is your name? ");
+      name = keyboard.nextLine();
+
+      System.out.println("How many hours did you work? ");
+      hours = keyboard.nextInt();
+
+      //consuming the remaining new line
+      keyboard.nextLine();                              //Must be done between primative value and String value 
+
+      System.out.println("What month did you work? ");
+      month = keyboard.nextLine();
+
+      System.out.println("Would you like a recipet? (Y=yes, N=no) ");
+      input = keyboard.nextLine();                      //Get a line of input      
+      answer = input.charAt(0);                         //get first character
