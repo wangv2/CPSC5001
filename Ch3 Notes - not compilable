@@ -1,0 +1,131 @@
+//----------------------------------------------------------------------------------------------------------------------
+//Chapter 3
+//----------------------------------------------------------------------------------------------------------------------
+      //the if statement
+      //General format
+      if (Boolean Expression)                           //Boolean expression must be either true or false
+         Statement;                                     //If boolean true, then statement is exeicute
+                                                        //If boolean is false, statement is skipped 
+                                                        //Semicolon after statement and NOT after if expression
+      //Using relational operators 
+      //>, <, >=, <=, ==, !=
+     if (sales > 50000)                                 //if boolean is true, bonus is assigned a value of 500.0
+         bonus = 500.0;                                 //style: the statement should be indented once from if statement
+                                                        //if statements end with semicolon 
+      if (sales > 5000)
+      {
+         bonus = 500.0;                                 //enclose groups of statements in curlies 
+         comissionRate = 0.12;
+      }
+
+      //flag variables 
+      //a boolean variable that is set to either true or false to see if a condition exists, see example: 
+      if (average > 95)
+         highscore = true;
+      if (highscore)
+         System.out.println("That's a high score");
+
+      //comparing characters
+      //Assume ch is a char variable, examples for == and !=
+      //Can use to test character data as well as numbers 
+      if (ch == 'A')
+         System.out.println("This is letter A");
+      if (ch != 'A')
+         System.out.println ("This is not letter A");
+
+      //if-else statements
+      //well execute one group of statements if boolean is true and another set of statement if boolean is false 
+      //an expansion of the if statement
+      if (boolean expression)                           //if statement is true first statements will execute
+         statement or block                             //if statement is false, second wil execute 
+      else
+         statement of block
+
+      //nested if statements
+      if (salary >= 30000)                              //if first if is true, then go to next if question
+      {                                                 //if first if falst, go to corresponding else 
+         if yearOnJob (>= 2)                            //if second if true, do statement
+         {
+            System.out.println("you qualify for loan"); //if second if false, do it's corresponding else 
+         }
+         else
+{                                              //brackets make it easier to read and debug in future
+            System.out.println("you  need to work at least two years to qualify);
+         }
+         else                                           //each else must match up with an if 
+         System.out.println("you need to earn more to qualify");
+      }
+
+
+      //if-else-if statements
+      //tests a series of conditions
+      if (expression)                                   //if true, execute next statement 
+      {
+      statement(s);
+      }
+      else if (expression)                              //if first if not true, and this if true, execute
+      {
+      statements(s);
+      }
+      else if (expression)
+      {
+      statement(s);
+      }                                                 //this formatting is prefered over nest if-else 
+
+      //logical operators
+      &&                                                //both statements must be true 
+                                                        //short-circut: if first operand false, 2nd wont be tested
+                                                        //can be used to shorten nested if else statements
+      ||                                                //at least one statement be true 
+                                                        //cannot both be false 
+                                                        //also does short circut evaluation 
+      !                                                 //reverese the true boolean expression
+                                                        //if true, then false, if false, then true 
+                                                        //PRECEDENCE!! highest to lowest: ! && ||
+      if (x>=20 && x<=40)                               //using && operator to see if number is in range        
+         System.out.print("this is an range");
+
+      //comparing String objects 
+      //you will usea String method, NOT relational operators
+      //you CANNOt use relational operators b/c it will compare variable addresses, instead of variable content
+      StringReference1.equals(StringReference2)         //general format of equals method
+      if(name1.equals(name2))                           //true if they are the same , false if they are different
+      {
+         System.out.print("these are same names");      //true is returned if equal, false if returned if not equal
+      }
+         else
+         {
+            System.out.print("different names");
+         }
+
+      //you can also compare String objects to string literals 
+     if (name1.equals("Mark"))                          //Put string literal in argument to equals method
+     if (!name1.equals("Mark"))                         //to see if name does NOt equal Mark 
+
+      //using the .comparedTo method to compare strings
+      StringReference.comparedTo(OtherString)           //if method returns -, SringReference < OtherString
+                                                        //if method returns 0, StringReference == OtherString
+                                                        //if method returns +, StringReference > OtherString
+      .equalsIgnoreCase                                 //ignores case of characters
+      .compareToIgnoreCase
+
+      //conditional operator (p153)
+      //powerful, shorthand method of expression a simple if-else statement
+      BooleanExpression ? Value1 : Value2;              //BooleanExpresion is like the part in () for if statement
+                                                        //If Boolean is true, then = Value1
+                                                        //If boolean is false, then = Vaue2 
+      //Switch statement
+      switch (testExpression)                           //testExpression is variable or expression
+      {
+         case value_1:                                  //these statements are executed if testExpression = Value1
+            statement(s);                               //each case starts with word case and ends with break;
+            break;
+
+         case value_2:                                  //these statements execute if testExpression = Value2
+            statement(s);
+            break;
+
+         default:                                       ///these statements execute if testExpression not equal
+            statement(s);                               //to any case values 
+            break;
+
